@@ -1,6 +1,6 @@
 # ALGO2020
 
-Solutions to problems from the facultative Algorithmics course at the Military University of Technology in Warsaw.
+Solutions to problems from the facultative Applied Algorithmics course at the Military University of Technology in Warsaw.
 
 ## Problems
 
@@ -19,7 +19,7 @@ Solutions to problems from the facultative Algorithmics course at the Military U
 ALGO2020 is the name of the Student Research Group mentored by Tomasz Idziaszek, Ph.D.
 
 I have started ALGO2020 to bring together people interested in algorithmics.
-Our university supported the initiative by assigning us a competitive programming expert (thanks!) and the Algorithmics course emerged.
+Our university supported the initiative by assigning us a competitive programming expert (thanks!) and the Applied Algorithmics course emerged.
 
 ### Building and running all defined test cases
 
