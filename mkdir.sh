@@ -1,11 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # Usage: ./mkdir.sh directory_name
 
-mkdir $1
+mkdir -p $1
 
-# TODO: Update Makefile contents.
-
-echo 'CC = g++\nEX = $(shell basename $(CURDIR))\n\nall: $(EX).o\n\t$(CC) $(EX).cpp -o $(EX)\n\nclean:\n\trm -rf *.o $(EX)' > $1/Makefile
+echo 'CC = g++\nDN = $(shell basename $(CURDIR))\n\nall: $(DN).o\n\t$(CC) -std=c++17 $(DN).cpp -o $(DN)\n\nclean:\n\trm -rf *.o $(DN)' > $1/Makefile
 
 echo 'int main() { return 0; }' > $1/$(basename $1).cpp
