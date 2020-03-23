@@ -1,8 +1,12 @@
-CC = g++
-DN = $(shell basename $(CURDIR))
+CXXFLAGS = -std=c++17
+FILENAME = $(shell basename $(CURDIR))
 
-all: $(DN).o
-	$(CC) -std=c++17 $(DN).cpp -o $(DN)
+all: $(FILENAME)
+
+$(FILENAME): $(FILENAME).o
+	$(CXX) -o $(FILENAME) $(FILENAME).o
+
+$(FILENAME).o: $(FILENAME).cpp
 
 clean:
-	rm -rf *.o $(DN)
+	rm -f *.o $(FILENAME)
