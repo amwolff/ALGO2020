@@ -18,16 +18,17 @@ int main() {
   int locmin = intervals[0].first;
   int locmax = intervals[0].second;
   for (size_t i = 1; i < intervals.size(); i++) {
-    if (intervals[i - 1].second < intervals[i].first) {
+    if (locmax < intervals[i].first) {
       printf("%d %d\n", locmin, locmax);
       locmin = intervals[i].first;
       locmax = intervals[i].second;
     } else {
-      locmax = intervals[i - 1].second;
+      locmax = max(locmax, intervals[i].second);
+    }
+    if (i == intervals.size() - 1) {
+      printf("%d %d\n", locmin, locmax);
     }
   }
-
-  printf("%d %d\n", locmin, locmax);
 
   return 0;
 }
