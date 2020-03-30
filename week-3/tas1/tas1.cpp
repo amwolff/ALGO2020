@@ -10,7 +10,7 @@ int main() {
 
   vector<int> a(1 << n);
   for (size_t i = 0; i < a.size(); i++) {
-    scanf("%d\n", &a[i]);
+    scanf("%d", &a[i]);
   }
 
   if (t % 2 == 1) {
