@@ -23,8 +23,8 @@ int main() {
   }
 
   int sum = 0;
-  for (int i = 0; i < n; i++) {
-    sum += red_indegress[i] * (n - 1 - red_indegress[i]);
+  for (const int r : red_indegress) {
+    sum += r * (n - 1 - r);
   }
 
   printf("%d\n", (2 * n * (n - 1) * (n - 2) - 6 * sum) / 12);
