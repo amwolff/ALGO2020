@@ -1,5 +1,4 @@
 #include <cstdio>
-#include <vector>
 
 using namespace std;
 
@@ -8,6 +7,7 @@ int main() {
   char s[500000];
   scanf("%d\n%s", &n, s);
 
+  // Use a closure here to remember state.
   char prev = '\0';
   int cnt = 0;
   int ans = 0;
