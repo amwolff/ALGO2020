@@ -4,12 +4,14 @@
 using namespace std;
 
 int main() {
-  int p, k;
-  scanf("%d %d\n", &p, &k);
-  int n;
-  scanf("%d\n", &n);
+  int p, k, n;
+  scanf("%d %d\n%d\n", &p, &k, &n);
 
   map<int, int> moments;
+
+  moments[p] = 0;
+  moments[k] = 0;
+
   for (int i = 0; i < n; i++) {
     int a, b;
     scanf("%d %d\n", &a, &b);
@@ -33,17 +35,12 @@ int main() {
   int maximum = 0;
   int minimum = 1e9;
   for (const auto m : moments) {
-    if (m.first > k) {
-      break;
-    }
-    if (m.first > p) {
+    current += m.second;
+    if (m.first >= p && m.first <= k) {
       maximum = max(maximum, current);
       minimum = min(minimum, current);
     }
-    current += m.second;
   }
-  maximum = max(maximum, current);
-  minimum = min(minimum, current);
 
   printf("%d %d\n", minimum, maximum);
 
