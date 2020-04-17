@@ -8,9 +8,9 @@ int main() {
   int n;
   scanf("%d\n", &n);
 
-  size_t s = n;
+  const size_t s = n;
 
-  vector<int> a(n), b(n), c(n);
+  vector<int> a(s), b(s), c(s);
   for (size_t i = 0; i < s; i++) {
     scanf("%d", &a[i]);
   }

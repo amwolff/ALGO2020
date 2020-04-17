@@ -7,7 +7,7 @@ int main() {
   int n;
   scanf("%d\n", &n);
 
-  size_t s = n;
+  const size_t s = n;
 
   vector<int> dem(s), dis(s);
   for (size_t i = 0; i < s; i++) {
