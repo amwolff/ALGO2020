@@ -28,6 +28,14 @@ Solutions to problems from the facultative Applied Algorithmics course at the Mi
 4. [tas1](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/tas1/)
 5. [tro1](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/tro1/)
 
+### Week 4
+
+1. [bro](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/bro/)
+2. [inw](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/inw/)
+3. [jed](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/jed/)
+4. [lot](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/lot/)
+5. [pic](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/pic/)
+
 ### Extra problems
 
 1. [lis](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/lis/)
