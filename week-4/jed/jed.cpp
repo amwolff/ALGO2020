@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <cstdio>
+#include <map>
 #include <vector>
 
 using namespace std;
@@ -21,25 +22,33 @@ int main() {
     scanf("%d", &c[i]);
   }
 
-  int maximum = 0;
+  vector<int> distancesAB(s), distancesBC(s);
   for (size_t i = 0; i < s; i++) {
-    for (size_t j = 0; j < s; j++) {
-      for (size_t k = 0; k < s; k++) {
-        int count = 0;
-        for (size_t l = 0; l < s; l++) {
-          if (a[l] == b[l] && a[l] == c[l]) {
-            count++;
-          }
-        }
-        maximum = max(maximum, count);
-        rotate(c.begin(), ++c.begin(), c.end());
-      }
-      rotate(b.begin(), ++b.begin(), b.end());
-    }
-    rotate(a.begin(), ++a.begin(), a.end());
+    distancesAB[a[i] - 1] = i;
+    distancesBC[b[i] - 1] = i;
   }
 
-  printf("%d\n", maximum);
+  for (size_t i = 0; i < s; i++) {
+    distancesAB[b[i] - 1] -= i;
+    if (distancesAB[b[i] - 1] < 0) {
+      distancesAB[b[i] - 1] += n;
+    }
+    distancesBC[c[i] - 1] -= i;
+    if (distancesBC[c[i] - 1] < 0) {
+      distancesBC[c[i] - 1] += n;
+    }
+  }
+
+  map<pair<int, int>, int> pairCount;
+  for (size_t i = 0; i < s; i++) {
+    pairCount[make_pair(distancesAB[i], distancesBC[i])]++;
+  }
+
+  printf("%d\n", max_element(pairCount.cbegin(), pairCount.cend(),
+                             [](const auto &p1, const auto &p2) {
+                               return p1.second < p2.second;
+                             })
+                     ->second);
 
   return 0;
 }
