@@ -39,7 +39,7 @@ int main() {
     }
   }
 
-  map<pair<int, int>, int> pairCount;
+  map<const pair<const int, const int>, int> pairCount;
   for (size_t i = 0; i < s; i++) {
     pairCount[make_pair(distancesAB[i], distancesBC[i])]++;
   }
