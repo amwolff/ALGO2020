@@ -10,7 +10,7 @@ int main() {
   int n, m;
   scanf("%d %d\n", &n, &m);
 
-  vector<vector<int>> words(n, vector<int>(m));
+  vector words(n, vector<int>(m));
   for (size_t i = 0; i < words.size(); i++) {
     char word[kLimit];
     scanf("%s\n", word);
@@ -19,8 +19,8 @@ int main() {
     }
   }
 
-  vector<vector<int>> col(n, vector<int>(m, 0));
-  vector<vector<int>> dis(n, vector<int>(m, kLimit));
+  vector col(n, vector(m, 0));
+  vector dis(n, vector(m, kLimit));
 
   queue<pair<const int, const int>> q;
 
