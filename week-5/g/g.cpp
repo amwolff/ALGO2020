@@ -8,11 +8,11 @@ int main() {
   int n, m;
   scanf("%d %d\n", &n, &m);
 
-  vector mat(n, vector(n, false));
+  vector list(n, vector<int>());
   for (int i = 0; i < m; i++) {
     int a, b;
     scanf("%d %d\n", &a, &b);
-    mat[a - 1][b - 1] = true;
+    list[a - 1].push_back(b - 1);
   }
 
   vector col(n, 0);
@@ -27,11 +27,11 @@ int main() {
     const int u = q.front();
     q.pop();
 
-    for (size_t i = 0; i < mat[u].size(); i++) {
-      if (mat[u][i] && col[i] == 0) {
-        col[i]++;
-        dis[i] = dis[u] + 1;
-        q.push(i);
+    for (const int v : list[u]) {
+      if (col[v] == 0) {
+        col[v]++;
+        dis[v] = dis[u] + 1;
+        q.push(v);
       }
     }
 
