@@ -1,9 +1,5 @@
-#include <limits.h>
-
-#include <algorithm>
 #include <cstdio>
 #include <queue>
-#include <vector>
 
 using namespace std;
 
@@ -31,7 +27,7 @@ int main() {
     }
   }
 
-  vector dist(n + 1, INT_MAX - prices[0]);
+  vector dist(n + 1, 1e9 + 1e9 / 2 + 10000 + 1);
 
   dist[0] = 0;
 
@@ -48,10 +44,6 @@ int main() {
   while (!q.empty()) {
     const int u = q.top().second;
     q.pop();
-
-    if (dist[u] == INT_MAX - prices[0]) {
-      break;
-    }
 
     for (const auto p : list[u]) {
       const int c = min(cost[u], prices[p.first] / 2);
