@@ -45,6 +45,13 @@ Solutions to problems from the facultative Applied Algorithmics course at the Mi
 5. [tas](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/tas/)
 6. [tro](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/tro/)
 
+### Week 7
+
+1. [bit](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/bit/34263/)
+2. [g](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/problemset/problem/tEtKYjGDmrs1XbUIFU2pqKww/attachment/231/)
+3. [h](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/problemset/problem/tEtKYjGDmrs1XbUIFU2pqKww/attachment/231/)
+4. [res](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/res/18952/)
+
 ## Footnotes
 
 ALGO2020 is the name of the Student Research Group mentored by Tomasz Idziaszek, Ph.D.
@@ -54,7 +61,7 @@ Our university supported the initiative by assigning us a competitive programmin
 
 ### About the code
 
-I really tried to find a balance spot between readability and the clever touches.
+I didn't use fancy macros because I'm not cool enough (yet).
 
 ### Building and running all defined test cases
 
