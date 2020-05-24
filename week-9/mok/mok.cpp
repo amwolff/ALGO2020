@@ -1,80 +1,32 @@
-#include <limits.h>
-
 #include <cstdio>
-#include <vector>
+#include <queue>
 
 using namespace std;
 
+int n;
+
 vector<int> cap, fin;
 
-vector visited(49, vector(49, false));
-
-int _forTwo(const vector<int> &cur) {
-  if (visited[cur[0]][cur[1]]) {
-    return INT_MAX;
+int encode(const vector<int> &v) {
+  int ret = 0;
+  for (size_t i = 0; i < v.size(); i++) {
+    ret = ret * (cap[i] + 1) + v[i];
   }
-
-  visited[cur[0]][cur[1]] = true;
-
-  if (cur[0] == fin[0] && cur[1] == fin[1]) {
-    return 0;
-  }
-
-  if (cur[0] == 0 && cur[1] == 0) {
-    return INT_MAX;
-  }
-
-  int m1 = INT_MAX;
-  if (cur[0] > 0) {
-    vector newCur(cur);
-    newCur[0] = 0;
-    m1 = _forTwo(newCur);
-  }
-  int m2 = INT_MAX;
-  if (cur[1] > 0) {
-    vector newCur(cur);
-    newCur[1] = 0;
-    m2 = _forTwo(newCur);
-  }
-  int m3 = INT_MAX;
-  if (cur[0] < cap[0] && cur[1] > 0) {
-    vector newCur(cur);
-    newCur[0] += newCur[1];
-    if (newCur[0] > cap[0]) {
-      newCur[1] = newCur[0] - cap[0];
-    } else {
-      newCur[1] = 0;
-    }
-    newCur[0] -= newCur[1];
-    m3 = _forTwo(newCur);
-  }
-  int m4 = INT_MAX;
-  if (cur[1] < cap[1] && cur[0] > 0) {
-    vector newCur(cur);
-    newCur[1] += newCur[0];
-    if (newCur[1] > cap[1]) {
-      newCur[0] = newCur[1] - cap[1];
-    } else {
-      newCur[0] = 0;
-    }
-    newCur[1] -= newCur[0];
-    m4 = _forTwo(newCur);
-  }
-
-  int minimum = min(min(m1, m2), min(m3, m4));
-  if (minimum == INT_MAX) {
-    return INT_MAX;
-  }
-  return 1 + minimum;
+  return ret;
 }
 
-int forTwo() { return _forTwo(vector(cap)); }
+vector<int> decode(int v) {
+  vector<int> ret(n);
+  for (int i = n - 1; i >= 0; i--) {
+    ret[i] = v % (cap[i] + 1);
+    v /= cap[i] + 1;
+  }
+  return ret;
+}
 
 int main() {
-  int n;
   scanf("%d\n", &n);
 
-  vector<int> cur;
   for (int i = 0; i < n; i++) {
     int c;
     scanf("%d", &c);
@@ -86,24 +38,71 @@ int main() {
     fin.push_back(f);
   }
 
-  if (n == 1) {
-    if (fin[0] == cur[0] || fin[0] == 0) {
-      printf("%d\n", 1);
-    } else {
-      printf("NIE\n");
+  int cross_cur = 1;
+  for (size_t i = 0; i < cap.size(); i++) {
+    cross_cur *= cap[i] + 1;
+  }
+
+  const int enc_cap = encode(cap);
+  const int enc_fin = encode(fin);
+
+  vector dists(cross_cur, -1);
+
+  dists[enc_cap] = 0;
+
+  queue<int> q({enc_cap});
+
+  while (!q.empty()) {
+    const int u = q.front();
+    q.pop();
+
+    if (u == enc_fin) {
+      printf("%d\n", dists[enc_fin]);
+      return 0;
     }
-    return 0;
+
+    vector<int> d = decode(u);
+
+    int w;
+    for (size_t i = 0; i < d.size(); i++) {
+      for (size_t j = 0; j < d.size(); j++) {
+        if (i != j && d[i] > 0) {
+          if (d[i] <= cap[j] - d[j]) {
+            w = d[i];
+          } else {
+            w = cap[j] - d[j];
+          }
+          d[i] -= w;
+          d[j] += w;
+
+          const int e = encode(d);
+          if (dists[e] == -1) {
+            dists[e] = dists[u] + 1;
+            q.push(e);
+          }
+
+          d[i] += w;
+          d[j] -= w;
+        }
+      }
+    }
+    for (size_t i = 0; i < d.size(); i++) {
+      if (d[i] > 0) {
+        w = d[i];
+        d[i] = 0;
+
+        const int e = encode(d);
+        if (dists[e] == -1) {
+          dists[e] = dists[u] + 1;
+          q.push(e);
+        }
+
+        d[i] = w;
+      }
+    }
   }
 
-  if (n > 2) {
-    return 0;
-  }
+  printf("NIE\n");
 
-  int ans = forTwo();
-  if (ans == INT_MAX) {
-    printf("NIE\n");
-    return 0;
-  }
-  printf("%d\n", ans);
   return 0;
 }
