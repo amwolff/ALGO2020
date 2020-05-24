@@ -52,6 +52,12 @@ Solutions to problems from the facultative Applied Algorithmics course at the Mi
 3. [h](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/problemset/problem/tEtKYjGDmrs1XbUIFU2pqKww/attachment/231/)
 4. [res](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/res/18952/)
 
+### Week 9
+
+1. [kur](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/kur/17206/)
+2. [mok](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/mok/24225/)
+3. [row](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/row/21837/)
+
 ## Footnotes
 
 ALGO2020 is the name of the Student Research Group mentored by Tomasz Idziaszek, Ph.D.
