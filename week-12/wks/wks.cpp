@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <cstdio>
 #include <vector>
 
@@ -8,24 +7,38 @@ int main() {
   int n;
   scanf("%d\n", &n);
 
-  vector<int> v(n);
-  for (size_t i = 0; i < v.size(); i++) {
+  const size_t s = n;
+
+  vector<int> v(s);
+  for (size_t i = 0; i < s; i++) {
     scanf("%d\n", &v[i]);
   }
 
-  vector m(n, 1);
-  int maximum = 1;
-  for (size_t i = 0; i < v.size(); i++) {
-    for (size_t j = 0; j < i; j++) {
-      const int t = m[j] + 1;
-      if (v[i] > v[j] && m[i] < t) {
-        m[i] = t;
-        maximum = max(maximum, t);
-      }
+  vector<int> ans;
+
+  size_t i = 0;
+  for (size_t j = i; j < s; j++) {
+    if (v[j] == 0) {
+      i = j;
+      ans.push_back(0);
+      break;
+    }
+  }
+  for (size_t j = i; j < s; j++) {
+    if (v[j] == 1) {
+      i = j;
+      ans.push_back(0);
+      break;
+    }
+  }
+  for (size_t j = i; j < s; j++) {
+    if (v[j] == 2) {
+      ans.push_back(0);
+      break;
     }
   }
 
-  printf("%d\n", maximum);
+  printf("%ld\n", ans.size());
 
   return 0;
 }
