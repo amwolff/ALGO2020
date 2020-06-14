@@ -17,22 +17,22 @@ int main() {
   vector<int> ans;
 
   size_t idx = 0;
-  for (size_t j = idx; j < s; j++) {
-    if (v[j] == 0) {
-      idx = j;
+  for (size_t i = idx; i < s; i++) {
+    if (v[i] == 0) {
+      idx = i;
       ans.push_back(0);
       break;
     }
   }
-  for (size_t j = idx; j < s; j++) {
-    if (v[j] == 1) {
-      idx = j;
+  for (size_t i = idx; i < s; i++) {
+    if (v[i] == 1) {
+      idx = i;
       ans.push_back(0);
       break;
     }
   }
-  for (size_t j = idx; j < s; j++) {
-    if (v[j] == 2) {
+  for (size_t i = idx; i < s; i++) {
+    if (v[i] == 2) {
       ans.push_back(0);
       break;
     }
