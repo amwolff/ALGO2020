@@ -63,12 +63,16 @@ Solutions to problems from the facultative Applied Algorithmics course at the Mi
 
 ### Extra problems
 
-1. [lis](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/lis/)
-2. [min](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/min/)
-3. [prz](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/prz/)
-4. [sum](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/sum/)
-5. [tas](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/tas/)
-6. [tro](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/tro/)
+1. [age](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/age/)
+2. [bug](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/bug/)
+3. [kpk](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/kpk/)
+4. [lis](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/lis/)
+5. [min](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/min/)
+6. [prz](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/prz/)
+7. [prz1](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/prz1/)
+8. [sum](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/sum/)
+9. [tas](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/tas/)
+10. [tro](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/tro/)
 
 ## Footnotes
 
