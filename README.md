@@ -49,6 +49,13 @@ Solutions to problems from the facultative Applied Algorithmics course at the Mi
 2. [mok](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/mok/24225/)
 3. [row](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/row/21837/)
 
+### Week 12
+
+1. [gra](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/gra/)
+2. [ple](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/ple/)
+3. [rez](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/rez/)
+4. [wks](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/wks/)
+
 ### Extra problems
 
 1. [lis](https://szkopul.edu.pl/c/algorytmika-praktyczna-2020/p/lis/)
